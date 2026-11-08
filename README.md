@@ -3,7 +3,9 @@
 Veil experiments with perturbations aimed at the Stable Diffusion v1.5 VAE and adds an unauthenticated no-AI-manipulation signal. It does not guarantee protection. A preliminary single-photo SD v1.5 test showed visible distortion, but Meta edited a processed photo successfully. The seal can be forged or lost, does not prove identity or consent, and is not legally binding by itself.
 
 ## Your files
-- `index.html`: your Greek-gate website, with its CSS and JavaScript inside.
+- `index.html`: your Greek-gate website.
+- `css/style.css`: website appearance.
+- `js/app.js`: website interaction and server calls.
 - `app.py`: the server, shield and seal in one Python file.
 - `requirements-colab.txt`: the Colab dependencies; PyTorch, NumPy and OpenCV come from Colab.
 - `Start_in_Colab.ipynb`: starter notebook.

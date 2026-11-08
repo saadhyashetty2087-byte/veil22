@@ -16,6 +16,7 @@ import torch
 import torch.nn.functional as F
 from fastapi import Depends, FastAPI, File, Form, Header, HTTPException, Request, UploadFile
 from fastapi.responses import FileResponse, Response
+from fastapi.staticfiles import StaticFiles
 from imwatermark import WatermarkDecoder, WatermarkEncoder
 from PIL import Image, UnidentifiedImageError
 from slowapi import Limiter, _rate_limit_exceeded_handler
@@ -59,6 +60,8 @@ async def lifespan(app):
     POOL.shutdown(wait=False, cancel_futures=True)
 
 app = FastAPI(title='Veil experimental demo', lifespan=lifespan)
+app.mount('/css', StaticFiles(directory=ROOT / 'css'), name='css')
+app.mount('/js', StaticFiles(directory=ROOT / 'js'), name='js')
 limiter = Limiter(key_func=get_remote_address)
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
