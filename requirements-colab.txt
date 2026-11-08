@@ -1,0 +1,12 @@
+# Experimental Colab setup: use Colab's existing torch, torchvision, numpy and OpenCV.
+diffusers==0.32.2
+transformers==4.46.3
+huggingface-hub==0.27.1
+accelerate==1.2.1
+safetensors>=0.4.5,<0.6
+Pillow>=10,<12
+invisible-watermark==0.2.0
+fastapi==0.115.0
+uvicorn==0.30.6
+python-multipart==0.0.9
+slowapi==0.1.9
